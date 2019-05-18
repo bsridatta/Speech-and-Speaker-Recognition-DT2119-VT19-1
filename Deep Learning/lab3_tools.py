@@ -1,6 +1,7 @@
 import numpy as np
 import os
-from pysndfile import sndio
+#from pysndfile import sndio
+import soundfile as sf
 
 def path2info(path):
     """
@@ -26,10 +27,10 @@ def loadAudio(filename):
     the option dtype=np.int16 which keeps both the original data type and range
     of values.
     """
-    sndobj = sndio.read(filename, dtype=np.int16)
-    samplingrate = sndobj[1]
-    samples = np.array(sndobj[0])
-    return samples, samplingrate
+    #sndobj = sndio.read(filename, dtype=np.int16)
+    #samplingrate = sndobj[1]
+    #samples = np.array(sndobj[0])
+    return sf.read(filename, dtype='int16')
 
 def frames2trans(sequence, outfilename=None, timestep=0.01):
     """
