@@ -1,1 +1,5 @@
-tidigits_data/
+tidigits/
+*.npz
+pianition/
+Deep Learning/*.npz
+Deep\ Learning/*.npz
