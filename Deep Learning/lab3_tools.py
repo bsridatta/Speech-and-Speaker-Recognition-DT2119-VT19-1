@@ -1,7 +1,6 @@
 import numpy as np
 import os
-from pysndfile import sndio
-
+import soundfile as sf
 def path2info(path):
     """
     path2info: parses paths in the TIDIGIT format and extracts information
@@ -26,17 +25,11 @@ def loadAudio(path):
     the option dtype=np.int16 which keeps both the original data type and range
     of values.
     """
-<<<<<<< HEAD
     #sndobj = sndio.read(filename, dtype=np.int16)
     #samplingrate = sndobj[1]
     #samples = np.array(sndobj[0])
     return sf.read(path, dtype='int16')
-=======
-    sndobj = sndio.read(filename, dtype=np.int16)
-    samplingrate = sndobj[1]
-    samples = np.array(sndobj[0])
-    return samples, samplingrate
->>>>>>> parent of 81b7e20... Starting Lab 3
+
 
 def frames2trans(sequence, outfilename=None, timestep=0.01):
     """
